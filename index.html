@@ -31,11 +31,21 @@
 <body>
   <header>
     <nav>
-      <div class="nav__movile">
+      <div class="navBar">
         <div>
           <img class ="menu-icon"src="./images/icon-menu.svg" alt="menu">
           <img class="logo"src="./images/logo.svg" alt="logo">
+          <div class="nav__menu-Desktop">
+            <ul class="nav__menu-Desktop-list">
+              <li class="nav__menu-Desktop-item"><a href="#"> Collections</a></li>
+              <li class="nav__menu-Desktop-item"><a href="#"> Men</a></li>
+              <li class="nav__menu-Desktop-item"><a href="#"> Women</a></li>
+              <li class="nav__menu-Desktop-item"><a href="#"> About</a></li>
+              <li class="nav__menu-Desktop-item"><a href="#"> Contact</a></li>
+            </ul>
+          </div>
         </div>
+      
         <div>
           <img class ="cart" src="./images/icon-cart.svg" alt="carrito">
           <img class="avatar "src="./images/image-avatar.png" alt="cuenta">
@@ -43,8 +53,21 @@
       </div>
 
     </nav>
+    <nav class="nav__menu-ham--container">
+      <div class="nav__menu-ham">
+        <img class="close-ham" src="./images/icon-close.svg" alt="cerrar">
+        <ul class="nav__menu-ham-list">
+          <li class="nav__menu-ham-item"><a href="#"> Collections</a></li>
+          <li class="nav__menu-ham-item"><a href="#"> Men</a></li>
+          <li class="nav__menu-ham-item"><a href="#"> Women</a></li>
+          <li class="nav__menu-ham-item"><a href="#"> About</a></li>
+          <li class="nav__menu-ham-item"><a href="#"> Contact</a></li>
+        </ul>
+      </div>
+    </nav>
   </header>
 <main>
+  
   <section class="slider__galery-mobile">
     <div class="slider__galery-mobile--img">
       <img class="previus-icon"src="./images/icon-previous.svg" alt="previus">
@@ -52,32 +75,70 @@
     </div>
   </section>
   <section class="description__container">
+    <div class="galery__desktop">
+      <div class="galery__desktop-imgMain">
+        <div class="imgMain-container"> <img src="./images/image-product-1.jpg" alt=""></div>
+      </div>
+      <div class="galery__desktop-imgMain-thubnails">
+        <div class="img-thubnail-container" > <img src="./images/image-product-1-thumbnail.jpg" alt=""></div>
+        <div class="img-thubnail-container" > <img src="./images/image-product-2-thumbnail.jpg" alt=""></div>
+        <div class="img-thubnail-container" > <img src="./images/image-product-3-thumbnail.jpg" alt=""></div>
+        <div class="img-thubnail-container" > <img src="./images/image-product-4-thumbnail.jpg" alt=""></div>
+      </div>
+    </div>
     <div class="description">
       <h2 class="description__category">Sneaker Company</h2>
       <p class="description__title" >Fall Limited Edition Sneakers</p>
       <p class="description__text">  These low-profile sneakers are your perfect casual wear companion. Featuring a 
         durable rubber outer sole, they’ll withstand everything the weather can offer.
       </p>
-    </div>
-    <div class="price-container">
-      <div class="price--actually">
-        <p>$125.00</p>
-        <span class="descount">  50%</span>
+      <div class="price-container">
+        <div class="price--actually">
+          <p>$125.00</p>
+          <span class="descount">  50%</span>
+        </div>
+        <div class="price--before">$250.00</div>
       </div>
-      <div class="price--before">$250.00</div>
-    </div>
-    <div class="add-container">
-      <div class="minus">
-        <img class ="minus-icon "src="./images/icon-minus.svg" alt="rest">
+      <div class="buy-container">
+        <div class="add-container">
+          <div class="minus">
+            <img class ="minus-icon "src="./images/icon-minus.svg" alt="rest">
+          </div>
+          <div class="count-container">
+              <p class="count">0</p>
+          </div>
+          <div class="plus">
+            <img class="plus-icon" src="./images/icon-plus.svg" alt="add">
+          </div> 
+        </div>
+        <button class="button-primary"> <img src="./images/icon-cart white.svg" alt="add"> Add to cart</button>
       </div>
-      <div class="count-container">
-          <p class="count">0</p>
+    </div>   
+  </section>
+  <section class="card__notification-buy">
+    <article class= "card__notification">
+      <p class="card__notification-title"> Cart</p>
+      <div class="card__noticaction-info-container">
+        <div class="card__notication-info">
+          <img src="images/image-product-1.jpg" alt="imagen">
+          <div class="card__notication-info-text">
+            <h4 class="card__notication-info-text-title">Autumn Limeted Edition</h4>
+            <p class="card__notication-info-text-price">$125.00 x3 <span class="card__notication-info-text-price--total">$375.00</span></p>
+          </div>
+        </div>
+        <img class="delete" src="./images/icon-delete.svg" alt="eliminar">
       </div>
-      <div class="plus">
-        <img class="plus-icon" src="./images/icon-plus.svg" alt="add">
+      <button class="button-primary">Checkout</button>
+    </article>
+  </section>
+  <section class="card__notification-empty">
+    <article class= "card__notification">
+      <p class="card__notification-title"> Cart</p>
+      <div class="card__noticaction-info-container">
+        <p class="info-empty" >Your cart is empty.</p>
       </div>
-    </div>
-    <button class="add-cart"> <img src="./images/icon-cart white.svg" alt="add"> Add to cart</button>
+      </div>
+    </article>
   </section>
 
 </main>
@@ -87,13 +148,7 @@
 
 
   <!-- 
-  Collections
-  Men
-  Women
-  About
-  Contact
-
-  
+   
 
   
 
