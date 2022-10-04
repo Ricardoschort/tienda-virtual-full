@@ -47,7 +47,10 @@
         </div>
       
         <div>
-          <img class ="cart" src="./images/icon-cart.svg" alt="carrito">
+          <div>
+            <img class ="cart" src="./images/icon-cart.svg" alt="carrito">
+            <span class="notication-numnb">0</span>
+          </div>
           <img class="avatar "src="./images/image-avatar.png" alt="cuenta">
         </div>
       </div>
@@ -77,13 +80,15 @@
   <section class="description__container">
     <div class="galery__desktop">
       <div class="galery__desktop-imgMain">
-        <div class="imgMain-container"> <img src="./images/image-product-1.jpg" alt=""></div>
+        <div class="imgMain-container"> <img class="imgMain-desktop" src="./images/image-product-1.jpg" alt=""></div>
       </div>
       <div class="galery__desktop-imgMain-thubnails">
-        <div class="img-thubnail-container" > <img src="./images/image-product-1-thumbnail.jpg" alt=""></div>
-        <div class="img-thubnail-container" > <img src="./images/image-product-2-thumbnail.jpg" alt=""></div>
-        <div class="img-thubnail-container" > <img src="./images/image-product-3-thumbnail.jpg" alt=""></div>
-        <div class="img-thubnail-container" > <img src="./images/image-product-4-thumbnail.jpg" alt=""></div>
+        <div class="img-thubnail-container" >
+          <img id="1" class="imgThubnail" src="./images/image-product-1-thumbnail.jpg" alt="">
+          <img id="2" class="imgThubnail" src="./images/image-product-2-thumbnail.jpg" alt="">
+          <img id="3" class="imgThubnail" src="./images/image-product-3-thumbnail.jpg" alt="">
+          <img id="4" class="imgThubnail" src="./images/image-product-4-thumbnail.jpg" alt="">
+      </div>
       </div>
     </div>
     <div class="description">
@@ -111,7 +116,7 @@
             <img class="plus-icon" src="./images/icon-plus.svg" alt="add">
           </div> 
         </div>
-        <button class="button-primary"> <img src="./images/icon-cart white.svg" alt="add"> Add to cart</button>
+        <button class="button-primary add"> <img src="./images/icon-cart white.svg" alt="add"> Add to cart</button>
       </div>
     </div>   
   </section>
@@ -140,8 +145,25 @@
       </div>
     </article>
   </section>
-
+  
 </main>
+<div class="galery__desktop-popup-container">
+  <div class="galery__desktop-popup">
+    <img class="close-galery-popup" src="./images/icon-close -white.svg" alt="close">
+    <div class="galegy__desktop-slider">
+      <img  class="previus-icon previus-icon-popup" src="./images/icon-previous.svg" alt="previus">
+      <img class="galery__desktop-popup-img" src="./images/image-product-1.jpg" alt="imagen">
+      <img class="next-icon next-icon-popup" src="./images/icon-next.svg" alt="next">
+    </div>
+    <div class="galery__desktop-popup-thumbs">
+      <div class="img-thubnail-desktop-container" > <img id="p1" src="./images/image-product-1-thumbnail.jpg" alt=""></div>
+      <div class="img-thubnail-desktop-container" > <img id="p2"src="./images/image-product-2-thumbnail.jpg" alt=""></div>
+      <div class="img-thubnail-desktop-container" > <img id="p3"src="./images/image-product-3-thumbnail.jpg" alt=""></div>
+      <div class="img-thubnail-desktop-container" > <img id="p4"src="./images/image-product-4-thumbnail.jpg" alt=""></div>
+    </div>
+  </div>
+
+</div>
 
 
 
