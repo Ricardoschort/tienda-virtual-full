@@ -38,9 +38,16 @@ body{
     justify-content: center;
     align-items: center;
 }
+.cart{
+    position: relative;
+}
 .avatar, .cart, .menu-icon {
     width: 23px;
-    position: relative;
+    
+}
+.avatar:hover{
+    border-radius: 24px;
+    background-color: var(--color-primary-orange);
 }
 
 .notication-numnb{
@@ -51,7 +58,6 @@ body{
     position: absolute;
     font-size: 12px;
     top:5px;
-    right: 12%;
     display: none;
 }
 .notication-numnb.active{
@@ -61,18 +67,24 @@ body{
 /*css galery movile*/
 
 .slider__galery-mobile--img{
-    background-image: url(./images/image-product-1.jpg);
-    background-repeat: no-repeat;
-    height: 225px;
-    background-size: cover;
-    background-position: center center;
-    width: 100%;
     display: flex;
+    height: 225px;
+    width: 100%;
     justify-content: space-around;
     gap: 75%;
+    position: relative;
     align-items: center;
+    z-index: 10;
 
 }
+.slider--img{
+    position: absolute;
+    width: 100%;
+    object-fit: cover;
+    height: inherit;
+    z-index: -20;
+}
+
 
 .next-icon, .previus-icon{
     padding: 3px;
@@ -80,6 +92,7 @@ body{
     height: 15px;
     background: var(--white);
     border-radius: 50%;
+    z-index: 10;
 
 }
 .description__container{
@@ -183,10 +196,18 @@ body{
  text-decoration: none;
   list-style: none;
   margin-right: 15px;
+  padding: 2px;
+}
+.nav__menu-Desktop-item:hover{
+    background-color: var(--color-primary-orange-light);
+    transition: 4ms;
+    border-radius: 4px;
+    
 }
 .nav__menu-Desktop-item a{
     text-decoration: none;
     color: var(--gris-blue);
+   
 }
 .galery__desktop{
     display: none;
@@ -198,6 +219,7 @@ body{
     background: rgba(0, 0, 0, 0.43);
     width: 100%;
     top: 0px;
+    z-index: 50;
     display: none;
 }
 .nav__menu-ham{
@@ -217,6 +239,12 @@ body{
     text-decoration: none;
     list-style: none;
     margin-bottom: 12px;
+}
+
+.nav__menu-ham-item:hover{
+    background-color: var(--color-primary-orange-light);
+    transition: 4ms;
+    
 }
 .nav__menu-ham-item a{
     color: #000;
@@ -260,6 +288,10 @@ body{
     opacity: 30%;
     border: 2px solid var(--color-primary-orange);
     cursor: pointer;
+}
+.select{
+    opacity: 30%;
+    border: 2px solid var(--color-primary-orange);
 }
 
 /*pop up de compras*/
@@ -329,7 +361,7 @@ body{
 
 
 
-/*Galery desktop/*/
+/*Galery desktop pop Up/*/
 
 .galery__desktop-popup-container{
     position: absolute;
@@ -343,8 +375,9 @@ body{
     top: 0px;
     display:none;
 }
+
 .galery__desktop-popup-container.active{
-    display: grid;
+    display: none;
 }
 .galery__desktop-popup{
     width: 370px;
@@ -375,6 +408,7 @@ body{
     padding: 9px;
     width: 30px;
     height: 30px;
+    z-index: 1000;
     cursor: pointer;
 }
 .previus-icon-popup{
@@ -386,6 +420,7 @@ body{
     position: absolute;
     right: -15px;
 }
+
 
 
 .galery__desktop-popup-thumbs{
@@ -411,10 +446,16 @@ body{
     border: 2px solid var(--color-primary-orange);
     cursor: pointer;
 }
+.select-pop{
+    opacity: 75%;
+    border: 2px solid var(--color-primary-orange);
+}
 
 .show{
     display: block;
 }
+
+
 
 @media (min-width:750px) {
 
@@ -452,7 +493,7 @@ body{
     .description__container{
         display: flex;
         flex-direction: row;
-        gap: 125px;
+        gap:40px;
         justify-content: center;
     }
    
@@ -486,6 +527,16 @@ body{
        
     box-shadow: 3px 2px 13px hsla(225, 4%, 18%, 0.418);
 
+    }
+    .galery__desktop-popup-container.active{
+        display: grid;
+    }
+  
+
 }
 
+@media(min-width:900px){
+    .description__container{
+        gap: 110px;
+    }
 }

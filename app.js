@@ -91,35 +91,46 @@ function openCard(){
 }
 
 /* Galeria principal desktop*/
-let closePopUp =document.querySelector(".close-galery-popup")
+
 let imgMainDesktop = document.querySelector(".imgMain-desktop")
 let imgMainDesktopContainer = document.querySelector(".galery__desktop-popup-container")
 let containerThumnailDesktop= document.querySelector(".img-thubnail-container");
 let imgThumnailDesktop = document.querySelectorAll(".imgThubnail")
-let tubnailsDesktopPopUp = document.querySelectorAll(".img-thubnail-desktop-container");
-let imgThumnailDesktopPopUp = document.querySelector(".img-thubnail-desktop")
-let nextIconPopUp = document.querySelector(".next-icon-popup");
-let previusIconPopUp = document.querySelector(".previus-icon-popup");
+
 imgThumnailDesktop= [...imgThumnailDesktop] ;
-tubnailsDesktopPopUp =[...tubnailsDesktopPopUp]
 
 
 
 imgThumnailDesktop.forEach(img=>{
     img.addEventListener("click",(e)=>{
+        let select = document.querySelector(".select")
+        select.classList.remove("select")
         let index =e.target.id
-        document.querySelector(".imgMain-desktop").src=`./images/image-product-${index}.jpg`;
-       
+        imgMainDesktop.src=`./images/image-product-${index}.jpg`;
+        img.classList.add("select")
     })
+  
     
 })
 
 
+/* galeria desktop flotante*/
+
+let tubnailsDesktopPopUp = document.querySelectorAll(".img-thubnail-desktop-container");
+let imgThumnailDesktopPopUp = document.querySelector(".img-thubnail-desktop")
+let nextIconPopUp = document.querySelector(".next-icon-popup");
+let previusIconPopUp = document.querySelector(".previus-icon-popup");
+let closePopUp =document.querySelector(".close-galery-popup")
+let imgContainerGaleryPop =document.querySelector(".galery__desktop-popup-img");
+tubnailsDesktopPopUp =[...tubnailsDesktopPopUp]
+let imgIndex=1;
 
 
 imgMainDesktop.addEventListener("click", ()=>{
     imgMainDesktopContainer.classList.add("active")
 })
+
+
 
 closePopUp.addEventListener("click", ()=>{
     imgMainDesktopContainer.classList.remove("active")
@@ -127,16 +138,57 @@ closePopUp.addEventListener("click", ()=>{
 
 tubnailsDesktopPopUp.forEach(imgPopUp=>{
     imgPopUp.addEventListener("click", (e)=>{
+    let select = document.querySelector(".select-pop");
+    select.classList.remove("select-pop")
     let popIndex=(e.target.id.slice(-1))
-    document.querySelector(".galery__desktop-popup-img").src=`images/image-product-${popIndex}.jpg`;
-
+    imgContainerGaleryPop.src=`images/image-product-${popIndex}.jpg`;
+    imgPopUp.classList.add("select-pop")
     })
     
 })
 
-previusIconPopUp.addEventListener("click", nextImg)
+previusIconPopUp.addEventListener("click",()=>{
+    previusImg(imgContainerGaleryPop);
+})
+
+nextIconPopUp.addEventListener("click",()=>{
+    nextImg(imgContainerGaleryPop);
+})
 
 
-function nextImg(){
+/* galeria mobile*/
+
+let nextGaleryMobile= document.querySelector(".next-icon");
+let previusGaleryMobile =document.querySelector(".previus-icon")
+let galeryMobileContainer =document.querySelector(".slider--img")
+
+nextGaleryMobile.addEventListener("click", ()=>{
+    nextImg(galeryMobileContainer)
+})
+previusGaleryMobile.addEventListener("click", ()=>{
+    previusImg(galeryMobileContainer)
+})
+
+
+
+function previusImg(imgcontainer){
+    if(imgIndex<=1){
+        imgIndex=4;
+    }else{
+        imgIndex--
+    }
+    
+    imgcontainer.src=`images/image-product-${imgIndex}.jpg`
     
 }
+
+function nextImg(imgcontainer){
+    if(imgIndex>=4){
+        imgIndex=1
+    }else{
+        imgIndex++
+    }
+    imgcontainer.src=`images/image-product-${imgIndex}.jpg`
+    console.log(imgIndex)
+}
+
